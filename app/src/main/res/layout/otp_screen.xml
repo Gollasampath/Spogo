@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/ic_background_main"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/_18sdp"
+        android:src="@drawable/ic_leftarrow"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsregular"
+        android:gravity="center"
+        android:text="Verify Your number"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mobilenumtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/poppinsregular"
+        android:gravity="center"
+        android:text="6 digit code sent to +91 917 XXX XXXXX"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/otpedittext1"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/_20sdp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/verfybutton"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:background="@drawable/rounded_button_yellow"
+        android:fontFamily="@font/poppinsregular"
+        android:text="VERIFY"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_100sdp"
+            android:text="Resend in"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:paddingRight="@dimen/_110sdp"
+            android:text="00:50s"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

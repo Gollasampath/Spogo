@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splashbackground"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_220sdp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_220sdp"
+        android:fontFamily="@font/poppinsregular"
+        android:gravity="center"
+
+        android:text="S P O R T I N G   U N L I M I T E D"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16sdp" />
+
+</LinearLayout>

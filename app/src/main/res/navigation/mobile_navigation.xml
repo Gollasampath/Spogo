@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.pss.spogoo.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/home_screen">
+
+        <action
+            android:id="@+id/action_nav_home_to_nav_buildprofile"
+            app:destination="@id/nav_buildprofile"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+
+    </fragment>
+
+    //home fragments
+
+    <fragment
+        android:id="@+id/nav_buildprofile"
+        android:name="com.pss.spogoo.ui.home.BuildProfile_Fragment"
+        android:label="Build Your Profile"
+        tools:layout="@layout/buildprofile_screen" />
+
+
+    //categoires
+    <fragment
+        android:id="@+id/navigation_categories"
+        android:name="com.pss.spogoo.ui.Category_Screen.CategoryFragment"
+        android:label="@string/title_categories"
+        tools:layout="@layout/category_fragment">
+
+        <action
+            android:id="@+id/action_nav_home_to_nav_product"
+            app:destination="@id/nav_product"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_product"
+        android:name="com.pss.spogoo.ui.Category_Screen.Product_Fragment"
+        android:label="@string/title_categories"
+        tools:layout="@layout/product_screen">
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_cartlist"
+        android:name="com.pss.spogoo.Cart_Screen"
+        android:label="@string/title_search"
+        tools:layout="@layout/cart_list_screen" />
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.pss.spogoo.ui.search.AccountProfile_Fragment"
+        android:label="@string/title_account"
+        tools:layout="@layout/profile_screen" />
+
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.pss.spogoo.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/search_screen" />
+
+
+</navigation>

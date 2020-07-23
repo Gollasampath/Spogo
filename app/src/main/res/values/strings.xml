@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SpoGoo</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_home">Home</string>
+    <string name="title_categories">Categories</string>
+    <string name="title_search">Search</string>
+    <string name="title_offers">Offers</string>
+    <string name="title_account">Account</string>
+    <string name="filter">FILTER</string>
+    <string name="facebook_app_id" translatable="false">1579364908927680</string>
+    <string name="title_activity_home__screen">Home_Screen</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">0b83aec1b017b86b135b2fe157496bbc</string>
+
+
+</resources>

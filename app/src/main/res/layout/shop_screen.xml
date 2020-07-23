@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/top_bar_shop" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:background="@drawable/background_secondary"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:layout_width="@dimen/_280sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/reatangle_button_white"
+
+                    android:drawableLeft="@drawable/ic_search"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:hint="Search Products"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/shopsliderimages"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp" />
+
+
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/shopcircleindicator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="bottom"
+                app:centered="true"
+                app:fillColor="@color/colorPrimary"
+                app:pageColor="#fff"
+                app:snap="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/poppinsregular"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="BEST DEALS"
+                    android:textColor="@color/black"
+
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/exploreall_shop"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="left"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/poppinsregular"
+                    android:gravity="right"
+
+
+                    android:paddingRight="@dimen/_20sdp"
+                    android:text="Explore all"
+                    android:textColor="@color/lightblack"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gvallcategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_weight="0.6"
+
+                    android:fontFamily="@font/poppinsregular"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="RECENT PRODUCTS"
+                    android:textColor="@color/black"
+
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:id="@+id/gvrecent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/poppinsregular"
+
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="FITNESS &amp; EXERCISE"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:id="@+id/gvfitness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <ProgressBar
+                    android:id="@+id/progressBarshop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <ImageView
+                android:layout_width="@dimen/_270sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/moonsoonoffer"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/poppinsregular"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="TOP BRANDS"
+                    android:textColor="@color/black"
+
+                    android:textSize="@dimen/_14sdp" />
+
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gvtopbrands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_weight="0.6"
+
+                android:fontFamily="@font/poppinsregular"
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="POPULAR SPORTS"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_14sdp" />
+
+
+            <GridView
+                android:id="@+id/gvpopularsports"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_350sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="3"
+                android:verticalSpacing="10dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_weight="0.6"
+                android:fontFamily="@font/poppinsregular"
+
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="APPAREL"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_14sdp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gvapparel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_weight="0.6"
+                android:fontFamily="@font/poppinsregular"
+
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="ACCESSORIES"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_14sdp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gvacessories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_weight="0.6"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="ELECTRONICS"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_14sdp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gvelectronics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="@dimen/_1sdp"
+                android:numColumns="3"
+                android:verticalSpacing="1dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_weight="0.6"
+
+                android:fontFamily="@font/poppinsregular"
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="HEALTH PRODUCTS"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_14sdp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gvhealthprodcuts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_30sdp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_main"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_170sdp"
+        android:src="@drawable/ic_sucess_icon" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/poppinsregular"
+        android:gravity="center"
+        android:text="Congratulations!"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_19sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:fontFamily="@font/poppinsregular"
+        android:gravity="center"
+        android:text="Your mobile number verification is"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/poppinsregular"
+        android:gravity="center"
+        android:text="successful ! Enter the first sporting Arena."
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center"
+        android:text="best sports services provided."
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:background="@drawable/rounded_button_green"
+        android:fontFamily="@font/poppinsregular"
+        android:text="LET'S GET STARTED"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp" />
+</LinearLayout>

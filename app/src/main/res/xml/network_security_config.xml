@@ -1,0 +1,11 @@
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+            <domain-config cleartextTrafficPermitted="true">
+
+                <domain includeSubdomains="true">https://avc.net.in/spogoo/Spogoo_api/</domain>
+            </domain-config>
+        </trust-anchors>
+    </base-config>
+</network-security-config>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/top_bar_product" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg"
+        android:orientation="horizontal"
+        android:padding="@dimen/_7sdp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/productname_text"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            android:visibility="gone"></TextView>
+
+        <TextView
+            android:id="@+id/cartitems"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="right"
+            android:text="10 ITEMS"
+
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            android:visibility="gone"></TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/_3sdp">
+
+        <TextView
+            android:id="@+id/sortitems_text"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="0.5"
+            android:drawableLeft="@drawable/ic_sort"
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="center"
+
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingEnd="@dimen/_40sdp"
+            android:text="SORT"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_weight="0.5"
+            android:drawableLeft="@drawable/ic_filter"
+
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="center"
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingEnd="@dimen/_40sdp"
+            android:text="@string/filter"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/noproducts"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="center"
+
+            android:text="No Prodcuts Available"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            android:visibility="gone"></TextView>
+
+        <GridView
+            android:id="@+id/gvuserproductdetsils"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/bg"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:visibility="visible" />
+
+
+        <GridView
+            android:id="@+id/gvuserelectronics"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/bg"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:visibility="gone" />
+
+
+        <GridView
+            android:id="@+id/gvusercategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/bg"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:visibility="gone" />
+
+        <GridView
+            android:id="@+id/gvfitness"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/bg"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:visibility="gone" />
+
+
+        <GridView
+            android:id="@+id/gvsearchproduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/bg"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progressBarproduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+
+</LinearLayout>

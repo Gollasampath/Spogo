@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_100sdp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/_3sdp">
+
+
+    <ImageView
+        android:id="@+id/shoppopularimage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/shoppopulartext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_gravity="bottom"
+        android:fontFamily="@font/poppinsregular"
+        android:gravity="center"
+
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold">
+
+    </TextView>
+</FrameLayout>

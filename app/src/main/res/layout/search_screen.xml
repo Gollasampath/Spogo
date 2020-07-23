@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--    <include-->
+    <!--        android:id="@+id/toolbar_title"-->
+    <!--        layout="@layout/top_bar_back" />-->
+
+
+    <!--    <include-->
+    <!--        android:id="@+id/toolbar_title"-->
+    <!--        layout="@layout/top_bar_back" />-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/ic_rectanglebg"
+        android:orientation="vertical">
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/searchedit"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/reatangle_button_white"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawablePadding="@dimen/_10sdp"
+        android:fontFamily="@font/poppinsregular"
+        android:hint="Search Products"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/_10sdp"
+
+        android:textSize="@dimen/_14sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchdatarecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+
+        android:layout_marginTop="@dimen/_10sdp"
+        android:scrollbars="vertical"
+        android:visibility="visible" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchrecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+
+        android:layout_marginTop="@dimen/_10sdp"
+        android:scrollbars="vertical"
+        android:visibility="invisible" />
+
+</LinearLayout>

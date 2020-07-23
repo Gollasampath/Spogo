@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/top_bar_cart" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@color/bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:drawableLeft="@drawable/ic_address"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingLeft="@dimen/_27sdp"
+                android:text="Current delivery location"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:fontFamily="@font/poppinsregular"
+                android:gravity="left"
+                android:text="500472"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Change"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/poppinsregular"
+            android:paddingLeft="@dimen/_20sdp"
+            android:text="CART LIST"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewcart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_2sdp"
+            android:layout_weight="1">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_button_white1"
+            android:backgroundTint="@color/border"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingLeft="@dimen/_10sdp"
+                android:text="Apply PROMO CODE"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/rounded_button_white1"
+                    android:drawableLeft="@drawable/ic_couponicon"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:hint="ENTER CODE"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:textSize="@dimen/_9sdp" />
+
+
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="111dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/circle_button_red"
+                    android:fontFamily="@font/poppinsregular"
+                    android:gravity="center"
+                    android:text="You saved 200"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/totalprice"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="0.3"
+            android:background="@drawable/button_yellow"
+            android:fontFamily="@font/poppinsregular"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="0.7"
+            android:background="@drawable/button_green"
+            android:drawableRight="@drawable/ic_wallet"
+            android:fontFamily="@font/poppinsregular"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:text="PROCEED TO PAYMENT"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+
+    </LinearLayout>
+</LinearLayout>

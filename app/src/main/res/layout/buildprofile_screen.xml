@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_20sdp"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:background="@drawable/ic_rectanglebg"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:layout_width="@dimen/_280sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/reatangle_button_white"
+                    android:drawableLeft="@drawable/ic_search"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Search Products"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp" />
+
+            </FrameLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/poppinsregular"
+                android:gravity="center"
+                android:text="Select the Sports you are intrested in. "
+                android:textColor="@color/lightblack"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="normal" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <GridView
+                    android:id="@+id/gvsportslist"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_380sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:horizontalSpacing="10dp"
+                    android:numColumns="auto_fit"
+                    android:scrollbars="horizontal"
+                    android:verticalSpacing="10dp"></GridView>
+
+                <ProgressBar
+                    android:id="@+id/progressBarprofile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <Button
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/rounded_button_green"
+                android:fontFamily="@font/poppinsregular"
+                android:text="COMPLETE"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"></Button>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
