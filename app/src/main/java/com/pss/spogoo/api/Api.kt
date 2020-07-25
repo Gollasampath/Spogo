@@ -268,6 +268,26 @@ interface Api {
 
     ): Call<RepairsCategoryListResponse>
 
+
+    @GET("get_cycling_sub_categories_list")
+    fun getcyclingsubcategorylist(
+
+    ): Call<RepairsCyclingListResponse>
+
+    @GET("get_table_tennis_sub_categories_list")
+    fun getttsubcategorylist(
+
+    ): Call<RepairsTtListResponse>
+
+    @GET("get_cricket_sub_categories_list")
+    fun getcricketsubcategorylist(
+
+    ): Call<RepairsCricketListResponse>
+
+    @GET("get_gym_sub_categories_list")
+    fun getgymsubcategorylist(
+
+    ): Call<RepairsGymListResponse>
     @FormUrlEncoded
     @POST("repair_sub_category_list")
     fun getrepairssucategories(

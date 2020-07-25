@@ -5,6 +5,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -15,6 +16,8 @@ import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.parsaniahardik.kotlin_image_slider.DynamicSlideImage_Adapter
+import com.google.android.gms.tasks.Task
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.pss.spogoo.adapter.ApprealsRelated_Adapter
 import com.pss.spogoo.api.APIClient
 import com.pss.spogoo.api.Api
@@ -49,6 +52,10 @@ class ServiceDetails_Activity : AppCompatActivity() {
     lateinit var procutindetail_grade: TextView
     lateinit var procutindetail_package: TextView
     lateinit var procutindetail_location: TextView
+    lateinit var share: TextView
+    lateinit var colour1: TextView
+    lateinit var colour2: TextView
+    lateinit var colour3: TextView
     lateinit var procutindetail_brand: TextView
     lateinit var procutindetail_qty: TextView
     lateinit var tensions_text: TextView
@@ -75,10 +82,13 @@ class ServiceDetails_Activity : AppCompatActivity() {
         setContentView(R.layout.service_details_screen)
 //
         addcart_btn = findViewById<Button>(R.id.addcart_btn) as Button
-        slectbutton = findViewById<TextView>(R.id.slectbutton) as TextView
         tensions_text = findViewById<TextView>(R.id.tensions_text) as TextView
+        share = findViewById<TextView>(R.id.share) as TextView
         backimage_product = toolbar.findViewById<ImageView>(R.id.backimage_product) as ImageView
         procutindetail_addgrip = findViewById<TextView>(R.id.procutindetail_addgrip) as TextView
+        colour1 = findViewById<TextView>(R.id.colour1) as TextView
+        colour2 = findViewById<TextView>(R.id.colour2) as TextView
+        colour3 = findViewById<TextView>(R.id.colour3) as TextView
         racketname_edit = findViewById<EditText>(R.id.racketname_edit) as EditText
         procutindetail_imageview =
             findViewById<ImageView>(R.id.procutindetail_imageview) as ImageView
@@ -90,7 +100,6 @@ class ServiceDetails_Activity : AppCompatActivity() {
 
         productcircleindicator = findViewById<CirclePageIndicator>(R.id.productcircleindicator)
         procutindetail_newimage = findViewById<TextView>(R.id.procutindetail_newimage)
-        colors = findViewById<TextView>(R.id.colors)
         procutindetail_title = findViewById<TextView>(R.id.procutindetail_title)
         procutindetail_subtitle = findViewById<TextView>(R.id.procutindetail_subtitle)
         procutindetail_offerprice = findViewById<TextView>(R.id.procutindetail_offerprice)
@@ -133,7 +142,22 @@ class ServiceDetails_Activity : AppCompatActivity() {
             finish()
         }
         backimage_product.setOnClickListener {
-            startActivity(Intent(this, Rapair_Activity::class.java))
+            startActivity(Intent(this, RepairsProdctList_Screen::class.java))
+            finish()
+        }
+
+        share.setOnClickListener {
+
+            val sharebody=listOfindetailsrepair.product_name+"\n"+listOfindetailsrepair.product_image
+
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, sharebody)
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
 
         }
         addcart_btn.setOnClickListener {
@@ -211,19 +235,14 @@ class ServiceDetails_Activity : AppCompatActivity() {
 
                         try {
                             procutindetail_title.text = gripdetailsadapter.product_name
-
+                            colour1.text = gripdetailsadapter.product_name
                             procutindetail_description.text = gripdetailsadapter.description
 //                        procutindetail_gauge.text = gripdetailsadapter.gr
 //                            procutindetail_brand.text = gripdetailsadapter.color
                             procutindetail_material.text = gripdetailsadapter.material_info
                             procutindetail_mainprice.text =
                                 "\u20B9 " + gripdetailsadapter.regular_price.toString()
-                            colors.text = gripdetailsadapter.color
-                            var colorsplit = gripdetailsadapter.color.split(",")
-                            Log.e("colorsplit", "" + colorsplit)
-//                        var tensionstrng = gripdetailsadapter.t
 
-//                        procutindetail_tension.text = listOfindetailsrepair.tension
 
                             procutindetail_addgrip.setOnClickListener {
                                 var rocketname_Stng = racketname_edit.text.toString()

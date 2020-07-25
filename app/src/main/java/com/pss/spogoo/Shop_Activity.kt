@@ -133,7 +133,6 @@ class Shop_Activity : AppCompatActivity() {
 
         exploreall_shop.setOnClickListener {
             startActivity(Intent(this, CategoryMainActivity::class.java))
-            finish()
         }
 
         cartlayout.setOnClickListener {

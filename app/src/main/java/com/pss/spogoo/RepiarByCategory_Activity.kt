@@ -51,8 +51,7 @@ class RepiarByCategory_Activity : AppCompatActivity() {
         backcategory_image = findViewById<ImageView>(R.id.backcategory_image)
 
         backcategory_image.setOnClickListener {
-            startActivity(Intent(this, Home_Screen::class.java))
-            finish()
+            startActivity(Intent(this, Rapair_Activity::class.java))
         }
 
 

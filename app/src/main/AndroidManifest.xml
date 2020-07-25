@@ -64,7 +64,9 @@
         <activity android:name=".RepiarByCategory_Activity"></activity>
         <activity android:name=".UserSignup_Screen"></activity>
         <activity android:name=".AboutUs_Screen"></activity>
-        <activity android:name=".Rapair_Activity"></activity>
+        <activity android:name=".Rapair_Activity">
+
+        </activity>
         <activity android:name=".PrivacyPolicy_Screen"></activity>
         <activity android:name=".ui.Category_Screen.CategoryMainActivity" />
         <activity android:name=".RepairsProdctList_Screen" />

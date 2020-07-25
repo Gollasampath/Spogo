@@ -93,29 +93,33 @@ class Home_Screen : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-
-
-        if (doubleBackToExitOnce) {
-            super.onBackPressed()
-            return
-        }
-
-        this.doubleBackToExitOnce = true
-
-        //displays a toast message when user clicks exit button
-        Toast.makeText(applicationContext, "please press again to exit ", Toast.LENGTH_LONG).show()
-
-        //displays the toast message for a while
-        Handler().postDelayed({
-            kotlin.run {
-                doubleBackToExitOnce = false
-
-                finish()
-            }
-        }, 2000)
-
-
+        super.onBackPressed()
+        finish()
     }
+//    override fun onBackPressed() {
+//
+//
+//        if (doubleBackToExitOnce) {
+//            super.onBackPressed()
+//            return
+//        }
+//
+//        this.doubleBackToExitOnce = true
+//
+//        //displays a toast message when user clicks exit button
+//        Toast.makeText(applicationContext, "please press again to exit ", Toast.LENGTH_LONG).show()
+//
+//        //displays the toast message for a while
+//        Handler().postDelayed({
+//            kotlin.run {
+//                doubleBackToExitOnce = false
+//
+//                finish()
+//            }
+//        }, 2000)
+//
+//
+//    }
 
 
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -13,14 +13,15 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.pss.spogoo.R
 import com.pss.spogoo.models.RepairsCategoriesResponse
+import com.pss.spogoo.models.RepairsCyclingResponse
 
-class RepairStringService_Adapter(
+class RepairCyclingService_Adapter(
     context: Context,
-    arrayListImage: ArrayList<RepairsCategoriesResponse>
+    arrayListImage: ArrayList<RepairsCyclingResponse>
 ) :
     BaseAdapter() {
 
-    //Passing Values to Local Variablesxx
+    //Passing Values to Local Variables
 
     var context = context
     var arrayListImage = arrayListImage
@@ -40,7 +41,7 @@ class RepairStringService_Adapter(
             val mInflater = (context as Activity).layoutInflater
 
             //Inflating our grid_item.
-            myView = mInflater.inflate(R.layout.repairstngadapter_screen, parent, false)
+            myView = mInflater.inflate(R.layout.cycling_adapter, parent, false)
 
             //Create Object of ViewHolder Class and set our View to it
 
@@ -74,7 +75,7 @@ class RepairStringService_Adapter(
 
         //Setting Image to ImageView by position
 
-        Glide.with(context).load(arrayListImage.get(position).category_image)
+        Glide.with(context).load(arrayListImage.get(position).sub_category_image)
             .apply(RequestOptions().centerCrop())
             .transform(CenterCrop(), RoundedCorners(20))
 
@@ -82,8 +83,7 @@ class RepairStringService_Adapter(
             .into(holder.buildimage!!)
 
         //Setting name to TextView by position
-        holder.buildtext!!.text = arrayListImage.get(position).category_name
-
+        holder.buildtext!!.text = arrayListImage.get(position).sub_category_name
         return myView
 
     }

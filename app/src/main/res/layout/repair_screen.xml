@@ -130,13 +130,12 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_weight="0.6"
-
                     android:fontFamily="@font/poppinsregular"
                     android:paddingLeft="@dimen/_10sdp"
                     android:text="BEST DEALS"
                     android:textColor="@color/black"
-
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -160,7 +159,8 @@
 
                 android:id="@+id/gvrecent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
 
             <ImageView
                 android:layout_width="@dimen/_270sdp"
@@ -174,7 +174,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"
-
                 android:orientation="horizontal">
 
                 <TextView
@@ -185,7 +184,6 @@
                     android:paddingLeft="@dimen/_10sdp"
                     android:text="String Services"
                     android:textColor="@color/black"
-
                     android:textSize="@dimen/_12sdp"
                     android:textStyle="italic" />
 
@@ -196,13 +194,151 @@
             <GridView
                 android:id="@+id/repairstringservce"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_600sdp"
+                android:layout_height="@dimen/_530sdp"
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_5sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:horizontalSpacing="10dp"
                 android:numColumns="1"
+                android:verticalSpacing="10dp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/poppinsregular"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="Cycling Services"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+
+            <GridView
+                android:id="@+id/repaircyclingservices"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_350sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="3"
+                android:verticalSpacing="10dp"
+                android:visibility="visible" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/poppinsregular"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="Table Tennis Services"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+
+            <GridView
+                android:id="@+id/repairttservices"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="3"
+                android:verticalSpacing="10dp"
+                android:visibility="visible" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/poppinsregular"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="Cricket Services"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+
+            <GridView
+                android:id="@+id/cricketservices"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="3"
+                android:verticalSpacing="10dp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_weight="0.6"
+                    android:fontFamily="@font/poppinsregular"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:text="Gym Services"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
+
+
+            <GridView
+                android:id="@+id/gymservices"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="3"
                 android:verticalSpacing="10dp"
                 android:visibility="visible" />
 
@@ -218,12 +354,10 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_weight="0.6"
-
                     android:fontFamily="@font/poppinsregular"
                     android:paddingLeft="@dimen/_10sdp"
                     android:text="POPULAR SPORTS"
                     android:textColor="@color/black"
-
                     android:textSize="@dimen/_12sdp" />
 
 

@@ -36,7 +36,7 @@ class RepairsProdctList_Screen : AppCompatActivity() {
     lateinit var sort_repair: TextView
     lateinit var productback_image: ImageView
     lateinit var gvuserelectronics: GridView
-
+    var repairlist: Int = 0
     lateinit var repairsubcategory_id: String
     lateinit var repairsubcategory_name: String
     lateinit var cart_badge: TextView
@@ -68,7 +68,18 @@ class RepairsProdctList_Screen : AppCompatActivity() {
             getSharedPreferences("loginprefs", Context.MODE_PRIVATE)
         apparels = sharedPreferences.getInt("repair_indetails", 0)
         repairsubcategory_name = sharedPreferences.getString("repairsubcategory_name", "")!!
-
+        repairlist = sharedPreferences.getInt("repairlist", 0)
+        if (repairlist==1) {
+            getRepairsCyclingProductsList()
+        } else if (repairlist==2){
+            getRepairsTtProductsList()
+        } else if (repairlist==3){
+            getRepairsCricketProductsList()
+        } else if (repairlist==4){
+            getRepairsGymProductsList()
+        }else if (repairlist==5){
+        getRepairsProductsList()
+        }
         if (ShoppingCart.getShoppingCartSize().toString().equals("0")) {
             cart_badge.visibility = View.GONE
         } else {
@@ -104,9 +115,381 @@ class RepairsProdctList_Screen : AppCompatActivity() {
             dialog.show()
 
         }
-        getRepairsProductsList()
 
         productname_text.text = repairsubcategory_name
+
+
+    }
+    private fun getRepairsCyclingProductsList() {
+
+        if (NetWorkConection.isNEtworkConnected(this)) {
+
+            //Set the Adapter to the RecyclerView//
+
+
+            var apiServices = APIClient.client.create(Api::class.java)
+            val cyclesubid =
+                sharedPreferences.getString("cyclesubid", "").toString()
+
+
+            val call = apiServices.getrepairsproductsList(cyclesubid)
+
+            call.enqueue(object : Callback<RepairsProductsListResponse> {
+                @SuppressLint("WrongConstant")
+                override fun onResponse(
+                    call: Call<RepairsProductsListResponse>,
+                    response: Response<RepairsProductsListResponse>
+                ) {
+
+                    progressBarproduct.visibility = View.GONE
+                    Log.e(ContentValues.TAG, response.toString())
+
+                    if (response.isSuccessful) {
+
+                        //Set the Adapter to the RecyclerView//
+
+                        listOfproducts = response.body()?.response!!
+
+
+                        if (listOfproducts.isEmpty()) {
+
+                            noproducts.visibility = View.VISIBLE
+                            gvrepairproductdetsils.visibility = View.GONE
+
+                        } else {
+
+                            noproducts.visibility = View.GONE
+                            gvrepairproductdetsils.visibility = View.VISIBLE
+
+                            val adapter =
+                                RepairProduct_Adapter(
+                                    this@RepairsProdctList_Screen,
+                                    listOfproducts as ArrayList<RepairsProductsResponse>
+                                )
+
+                            gvrepairproductdetsils.adapter = adapter
+
+                            gvrepairproductdetsils.setOnItemClickListener { adapterView, parent, position, l ->
+
+                                var repair_id = adapter.arrayListImage.get(position).repairs_id
+                                val editor = sharedPreferences.edit()
+                                editor.putString("repair_id", repair_id.toString())
+                                editor.putInt("repair_indetails", 12)
+                                editor.commit()
+//
+//                                startActivity(
+//                                    Intent(
+//                                        this@RepairsProdctList_Screen,
+//                                        ServiceDetails_Activity::class.java
+//                                    )
+//                                )
+                                startActivity(
+                                    Intent(
+                                        this@RepairsProdctList_Screen,
+                                        ServiceDetails_Activity::class.java
+                                    ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                )
+                                finish()
+                            }
+                        }
+
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<RepairsProductsListResponse>?,
+                    t: Throwable?
+                ) {
+                    progressBarproduct.visibility = View.GONE
+                    Log.e(ContentValues.TAG, t.toString())
+                }
+            })
+
+
+        } else {
+
+            Toast.makeText(this, "Please Check your internet", Toast.LENGTH_LONG).show()
+        }
+
+
+    }
+
+    private fun getRepairsTtProductsList() {
+
+        if (NetWorkConection.isNEtworkConnected(this)) {
+
+            //Set the Adapter to the RecyclerView//
+
+
+            var apiServices = APIClient.client.create(Api::class.java)
+            val ttsubid =
+                sharedPreferences.getString("ttsubid", "").toString()
+
+
+            val call = apiServices.getrepairsproductsList(ttsubid)
+
+            call.enqueue(object : Callback<RepairsProductsListResponse> {
+                @SuppressLint("WrongConstant")
+                override fun onResponse(
+                    call: Call<RepairsProductsListResponse>,
+                    response: Response<RepairsProductsListResponse>
+                ) {
+
+                    progressBarproduct.visibility = View.GONE
+                    Log.e(ContentValues.TAG, response.toString())
+
+                    if (response.isSuccessful) {
+
+                        //Set the Adapter to the RecyclerView//
+
+                        listOfproducts = response.body()?.response!!
+
+
+                        if (listOfproducts.isEmpty()) {
+
+                            noproducts.visibility = View.VISIBLE
+                            gvrepairproductdetsils.visibility = View.GONE
+
+                        } else {
+
+                            noproducts.visibility = View.GONE
+                            gvrepairproductdetsils.visibility = View.VISIBLE
+
+                            val adapter =
+                                RepairProduct_Adapter(
+                                    this@RepairsProdctList_Screen,
+                                    listOfproducts as ArrayList<RepairsProductsResponse>
+                                )
+
+                            gvrepairproductdetsils.adapter = adapter
+
+                            gvrepairproductdetsils.setOnItemClickListener { adapterView, parent, position, l ->
+
+                                var repair_id = adapter.arrayListImage.get(position).repairs_id
+                                val editor = sharedPreferences.edit()
+                                editor.putString("repair_id", repair_id.toString())
+                                editor.putInt("repair_indetails", 12)
+                                editor.commit()
+//
+//                                startActivity(
+//                                    Intent(
+//                                        this@RepairsProdctList_Screen,
+//                                        ServiceDetails_Activity::class.java
+//                                    )
+//                                )
+                                startActivity(
+                                    Intent(
+                                        this@RepairsProdctList_Screen,
+                                        ServiceDetails_Activity::class.java
+                                    ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                )
+                                finish()
+                            }
+                        }
+
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<RepairsProductsListResponse>?,
+                    t: Throwable?
+                ) {
+                    progressBarproduct.visibility = View.GONE
+                    Log.e(ContentValues.TAG, t.toString())
+                }
+            })
+
+
+        } else {
+
+            Toast.makeText(this, "Please Check your internet", Toast.LENGTH_LONG).show()
+        }
+
+
+    }
+    private fun getRepairsCricketProductsList() {
+
+        if (NetWorkConection.isNEtworkConnected(this)) {
+
+            //Set the Adapter to the RecyclerView//
+
+
+            var apiServices = APIClient.client.create(Api::class.java)
+            val cricketsubid =
+                sharedPreferences.getString("cricketsubid", "").toString()
+
+
+            val call = apiServices.getrepairsproductsList(cricketsubid)
+
+            call.enqueue(object : Callback<RepairsProductsListResponse> {
+                @SuppressLint("WrongConstant")
+                override fun onResponse(
+                    call: Call<RepairsProductsListResponse>,
+                    response: Response<RepairsProductsListResponse>
+                ) {
+
+                    progressBarproduct.visibility = View.GONE
+                    Log.e(ContentValues.TAG, response.toString())
+
+                    if (response.isSuccessful) {
+
+                        //Set the Adapter to the RecyclerView//
+
+                        listOfproducts = response.body()?.response!!
+
+
+                        if (listOfproducts.isEmpty()) {
+
+                            noproducts.visibility = View.VISIBLE
+                            gvrepairproductdetsils.visibility = View.GONE
+
+                        } else {
+
+                            noproducts.visibility = View.GONE
+                            gvrepairproductdetsils.visibility = View.VISIBLE
+
+                            val adapter =
+                                RepairProduct_Adapter(
+                                    this@RepairsProdctList_Screen,
+                                    listOfproducts as ArrayList<RepairsProductsResponse>
+                                )
+
+                            gvrepairproductdetsils.adapter = adapter
+
+                            gvrepairproductdetsils.setOnItemClickListener { adapterView, parent, position, l ->
+
+                                var repair_id = adapter.arrayListImage.get(position).repairs_id
+                                val editor = sharedPreferences.edit()
+                                editor.putString("repair_id", repair_id.toString())
+                                editor.putInt("repair_indetails", 12)
+                                editor.commit()
+//
+//                                startActivity(
+//                                    Intent(
+//                                        this@RepairsProdctList_Screen,
+//                                        ServiceDetails_Activity::class.java
+//                                    )
+//                                )
+                                startActivity(
+                                    Intent(
+                                        this@RepairsProdctList_Screen,
+                                        ServiceDetails_Activity::class.java
+                                    ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                )
+                                finish()
+                            }
+                        }
+
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<RepairsProductsListResponse>?,
+                    t: Throwable?
+                ) {
+                    progressBarproduct.visibility = View.GONE
+                    Log.e(ContentValues.TAG, t.toString())
+                }
+            })
+
+
+        } else {
+
+            Toast.makeText(this, "Please Check your internet", Toast.LENGTH_LONG).show()
+        }
+
+
+    }
+    private fun getRepairsGymProductsList() {
+
+        if (NetWorkConection.isNEtworkConnected(this)) {
+
+            //Set the Adapter to the RecyclerView//
+
+
+            var apiServices = APIClient.client.create(Api::class.java)
+            val gymsubid =
+                sharedPreferences.getString("gymsubid", "").toString()
+
+
+            val call = apiServices.getrepairsproductsList(gymsubid)
+
+            call.enqueue(object : Callback<RepairsProductsListResponse> {
+                @SuppressLint("WrongConstant")
+                override fun onResponse(
+                    call: Call<RepairsProductsListResponse>,
+                    response: Response<RepairsProductsListResponse>
+                ) {
+
+                    progressBarproduct.visibility = View.GONE
+                    Log.e(ContentValues.TAG, response.toString())
+
+                    if (response.isSuccessful) {
+
+                        //Set the Adapter to the RecyclerView//
+
+                        listOfproducts = response.body()?.response!!
+
+
+                        if (listOfproducts.isEmpty()) {
+
+                            noproducts.visibility = View.VISIBLE
+                            gvrepairproductdetsils.visibility = View.GONE
+
+                        } else {
+
+                            noproducts.visibility = View.GONE
+                            gvrepairproductdetsils.visibility = View.VISIBLE
+
+                            val adapter =
+                                RepairProduct_Adapter(
+                                    this@RepairsProdctList_Screen,
+                                    listOfproducts as ArrayList<RepairsProductsResponse>
+                                )
+
+                            gvrepairproductdetsils.adapter = adapter
+
+                            gvrepairproductdetsils.setOnItemClickListener { adapterView, parent, position, l ->
+
+                                var repair_id = adapter.arrayListImage.get(position).repairs_id
+                                val editor = sharedPreferences.edit()
+                                editor.putString("repair_id", repair_id.toString())
+                                editor.putInt("repair_indetails", 12)
+                                editor.commit()
+//
+//                                startActivity(
+//                                    Intent(
+//                                        this@RepairsProdctList_Screen,
+//                                        ServiceDetails_Activity::class.java
+//                                    )
+//                                )
+                                startActivity(
+                                    Intent(
+                                        this@RepairsProdctList_Screen,
+                                        ServiceDetails_Activity::class.java
+                                    ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                )
+                                finish()
+                            }
+                        }
+
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<RepairsProductsListResponse>?,
+                    t: Throwable?
+                ) {
+                    progressBarproduct.visibility = View.GONE
+                    Log.e(ContentValues.TAG, t.toString())
+                }
+            })
+
+
+        } else {
+
+            Toast.makeText(this, "Please Check your internet", Toast.LENGTH_LONG).show()
+        }
 
 
     }
@@ -168,11 +551,17 @@ class RepairsProdctList_Screen : AppCompatActivity() {
                                 editor.putInt("repair_indetails", 12)
                                 editor.commit()
 //
+//                                startActivity(
+//                                    Intent(
+//                                        this@RepairsProdctList_Screen,
+//                                        ServiceDetails_Activity::class.java
+//                                    )
+//                                )
                                 startActivity(
                                     Intent(
                                         this@RepairsProdctList_Screen,
                                         ServiceDetails_Activity::class.java
-                                    )
+                                    ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                 )
                                 finish()
                             }
@@ -260,9 +649,8 @@ class RepairsProdctList_Screen : AppCompatActivity() {
                                     Intent(
                                         this@RepairsProdctList_Screen,
                                         ServiceDetails_Activity::class.java
-                                    )
+                                    ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                 )
-                                finish()
                             }
                         }
 

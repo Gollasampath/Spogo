@@ -1,5 +1,6 @@
 package com.pss.spogoo.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pss.spogoo.R
 import com.pss.spogoo.RepairsProdctList_Screen
 import com.pss.spogoo.models.RepairsSubCategoriesResponse
+
 
 class RepairSubCategory_Adapter(
     var context: Context,
@@ -46,13 +48,13 @@ class RepairSubCategory_Adapter(
         )
         editor.putString("repairsubcategory_name", userList.get(position).sub_category_name)
         editor.putInt("repair_indetails", 12)
+        editor.putInt("repairlist", 5)
         editor.commit()
+
         holder.linearsubcatgory.setOnClickListener {
 
-
             context.startActivity(Intent(context, RepairsProdctList_Screen::class.java))
-
-
+            (context as Activity).finish()
         }
     }
 
